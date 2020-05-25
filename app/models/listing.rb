@@ -5,6 +5,6 @@ class Listing < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true, uniqueness: true
   validates :price, presence: true, numericality: { only_integer: true }
-  validates :type, presence: true
+  validates :listing_type, presence: true
   validates :capacity, presence: true, numericality: { only_integer: true }
 end
