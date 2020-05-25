@@ -1,12 +1,36 @@
-.navbar-lewagon {
+.navbar-main{
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-main .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-main .navbar-brand img {
   width: 40px;
 }
+
+#notification{
+  position: absolute;
+  background: #FF0101;
+  border: 1.5px solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  right: 10px;
+}
+
+.notification-count {
+  color:white;
+  position: relative;
+  bottom: 1px;
+  font-size: 10px;
+}
+
+
