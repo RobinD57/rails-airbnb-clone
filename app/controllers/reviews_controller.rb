@@ -18,12 +18,12 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @listing
     respond_to do |format|
-      if @listing.save
-        format.html { redirect_to @listing, notice: 'listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
+      if @review.save
+        format.html { redirect_to reviews_path, notice: 'Review was successfully created.' }
+        format.json { render :index, status: :created, location: @reviews }
       else
         format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
   end
