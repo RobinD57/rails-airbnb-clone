@@ -1,4 +1,4 @@
-class ListingPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -9,14 +9,9 @@ class ListingPolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    true
-  end
-
   def create?
     true
   end
-
 
   def update?
     user_is_owner_or_admin?

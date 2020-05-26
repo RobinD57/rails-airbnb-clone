@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -28,6 +28,21 @@ class ListingsController < ApplicationController
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit; end
+
+  def update
+    if @listing.update(listing_params)
+      redirect_to @listing, notice: 'Listing was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @listing.destroy
+    redirect_to listings_url, notice: 'Listing was successfully destroyed.'
   end
 
   private
