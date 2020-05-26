@@ -3,20 +3,19 @@
     <%= render "/shared/carosel" %>
     <h4 class="text-right pr-5"><%= @listing.name %></h4>
   </div>
-
 </div>
-  <div class="mr-5 w-50">
-    <ul class="list-group">
-      <h4 class="text-right">Specs:</h4>
-      <% @listing.reviews.each do |dose| %>
-      <li class= "list-group-item">
-        <%=review.content %>
-        <%= link_to "<i class='fas fa-trash'></i>".html_safe,
-        review_path(review),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+<div class="mr-5 w-50">
+  <ul class="list-group">
+    <h4 class="text-right">Specs:</h4>
+    <% @listing.reviews.each do |review| %>
+    <li class= "list-group-item">
+      <%=review.content %>
+      <%= link_to "<i class='fas fa-trash'></i>".html_safe,
+      review_path(review),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
