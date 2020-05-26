@@ -12,9 +12,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    raise
     @listing = Listing.new(listing_params)
-
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'listing was successfully created.' }
