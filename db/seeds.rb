@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-user = User.create(password: "fqedeifn", first_name: "Test", last_name: "Test", birthdate: Date.new(2015, 12, 8), email: "test@test.de", gender: "Male")
+user = User.create(password: "fqedeifn", first_name: "Test", last_name: "Test", birthdate: Date.new(2015, 12, 8), email: Faker::Internet.email, gender: "Male")
 5.times do
   Listing.create(
     name: Faker::Lorem.sentence(word_count: 3),
