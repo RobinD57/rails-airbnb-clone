@@ -5,10 +5,8 @@
     <br>
     <%= link_to "back to list", root_path, :class => "btn btn-light btn-sm" %>
     <%= link_to "delete",
-    listings_path(@listing),
+    @listing,
     method: :delete,
     data: { confirm: "Are you sure?" }, :class => "btn btn-light btn-sm" %>
   </div>
 </div>
-
-
