@@ -1,26 +1,26 @@
-<!-- THIS IS CODED WITH RANDOM BACKGROUND IMAGES FOR PRESENTATION ONLY -->
-
 <div class="row">
-  <% @listings.each do |flat| %>
+  <% @listings.each do |listing| %>
+    <%= link_to listing_path(listing) do %>
       <div class="col-4">
         <div class="flat-card">
           <div class="flat-card-image" style="background-image: url('https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>')">
           </div>
             <div class="flat-card-content">
               <div class="flat-card-title">
-                <h4><%= flat.name %></h4>
+                <h4><%= listing.name %></h4>
               </div>
-              <p><%= flat.address %></p>
+              <p><%= listing.address %></p>
                 <div class="flex">
                 <div class="flex">
-                  <i class="fas fa-user-friends">    <%= flat.number_of_guests %></i>
+                  <i class="fas fa-user-friends">    <%= listing.capacity %></i>
                 </div>
                 <div class="flex ml-3">
-                  <i class="fas fa-euro-sign">    <%= flat.price_per_night %></i>
+                  <i class="fas fa-euro-sign">    <%= listing.price %></i>
                 </div>
               </div>
             </div>
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
