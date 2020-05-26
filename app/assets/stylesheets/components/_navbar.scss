@@ -1,7 +1,7 @@
 .navbar-main{
   justify-content: space-between;
   background: white;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .navbar-main .navbar-collapse {
@@ -24,24 +24,24 @@
   height: 15px;
   border-radius: 50%;
   position: relative;
-  right: 10px;
+  right: 12px;
 }
 
 .notification-count {
   color:white;
   position: relative;
-  bottom: 1px;
-  font-size: 10px;
+  bottom: 3px;
+  font-size: 12px;
 }
 
 #right-links {
   position: relative;
   top: 10px;
-  font-size: 12px;
+  font-size: 18px;
 }  p {
-  font-size: 10px;
+  font-size: 16px;
 } a {
-  font-size: 8px;
+  font-size: 14px;
 }
 
 #nametag {
@@ -55,11 +55,11 @@
 }
 
 #logo {
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .medium {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .avatar-button {
