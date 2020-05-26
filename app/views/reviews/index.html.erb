@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Rating</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', listing_path(params[:listing_id]) %>
