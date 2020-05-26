@@ -1,26 +1,33 @@
 <div class="row">
   <% @listings.each do |listing| %>
+  <div class="col-4">
     <%= link_to listing_path(listing) do %>
-      <div class="col-4">
         <div class="flat-card">
           <div class="flat-card-image" style="background-image: url('https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>')">
           </div>
             <div class="flat-card-content">
               <div class="flat-card-title">
-                <h4><%= listing.name %></h4>
+                <h4 class="card-overflow"><%= listing.name %></h4>
               </div>
-              <p><%= listing.address %></p>
-                <div class="flex">
-                <div class="flex">
-                  <i class="fas fa-user-friends">    <%= listing.capacity %></i>
+                <div class="flat-card-address">
+                  <p class="card-overflow"><%= listing.address %></p>
                 </div>
-                <div class="flex ml-3">
-                  <i class="fas fa-euro-sign">    <%= listing.price %></i>
-                </div>
+                <div class="d-flex">
+                  <div class="d-flex">
+                    <i class="fas fa-user-friends">    <%= listing.capacity %></i>
+                  </div>
+                  <div class="d-flex ml-3">
+                    <i class="fas fa-euro-sign">    <%= listing.price %></i>
+                  </div>
+                  <div class="d-flex ml-3">
+                    <i class="fas fa-home">  <%= listing.listing_type %></i>
+                  </div>
               </div>
             </div>
         </div>
       </div>
     <% end %>
+  <% end %>
+</div>
   <% end %>
 </div>
