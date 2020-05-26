@@ -1,21 +1,22 @@
 
-<div class="container main-show">
-  <p id="notice"><%= notice %></p>
+<div class="d-flex justify-content-around">
+  <div class="ml-5 w-50">
+    <h3 class="text-left"><%= @listing.name %></h3>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-  <%= @listing.address %>
-  <%= @listing.price %>
-  <%= @listing.listing_type %>
-  <%= @listing.capacity %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
 </div>
+  <div class="mr-5 w-50">
+    <ul class="list-group">
+      <h3>Specs:</h3>
+      <% @listing.reviews.each do |dose| %>
+      <li class= "list-group-item">
+        <%=review.content %>
+        <%= link_to "<i class='fas fa-trash'></i>".html_safe,
+        review_path(review),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+

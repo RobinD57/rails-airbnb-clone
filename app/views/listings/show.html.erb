@@ -1,2 +1,14 @@
-<%= render "/shared/show_card" %>
+<div class="container mt-5">
+  <div class="text-center p-5 m-3 bg-light w-60 rounded font-weight-bold">
+    <%= render "/shared/show_card.html.erb" %>
+    <br>
+    <br>
+    <%= link_to "back to list", root_path, :class => "btn btn-light btn-sm" %>
+    <%= link_to "delete",
+    listings_path(@listing),
+    method: :delete,
+    data: { confirm: "Are you sure?" }, :class => "btn btn-light btn-sm" %>
+  </div>
+</div>
+
 
