@@ -6,14 +6,34 @@
   border-radius: 40px;
 }
 
-
 .specs p {
   font-weight: lighter;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .specs {
   text-align: center;
-  background: white;
+}
 
+.red {
+  color: #AF2F60;
+}
+
+.all-specs {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 3px 50px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
+}
+
+.padded {
+  padding: 20px 20px 20px;
+}
+
+.border-radius {
+  border-radius: 20px;
+}
+
+.box-shadow {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
 }
