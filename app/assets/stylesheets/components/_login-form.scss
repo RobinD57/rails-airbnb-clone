@@ -10,9 +10,19 @@
   width: 500px;
 }
 
+.outer-box-signup {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: auto;
+  padding: 50px;
+  height: 600px;
+  width: 500px;
+}
+
 .login-title {
   text-align: center;
-  color: #dc1263;
+  color: #AF2F60;
 }
 
 .login-input {
@@ -25,7 +35,7 @@
 
 .submit-login-button {
   border-radius: 5px;
-  background-color: #dc1263;
+  background-color: #AF2F60;
   width: 100%;
   color: white;
   font-family: Roboto;
@@ -35,28 +45,4 @@
   color: white;
 }
 
-.small-links-botton {
-  font-size: 20px;
-  color: red;
-}
-
-.signup-devise-link {
-  padding-top: 5px;
-  color: #6d6d6d;
-  font-size: 15px;
-}
-
-.signup-devise-link:hover{
-  color: #dc1263;
-}
-
-.forgotpass-devise-link {
-  padding-top: 5px;
-  color: #6d6d6d;
-  font-size: 15px;
-}
-
-.forgotpass-devise-link:hover{
-  color: #dc1263;
-}
 
