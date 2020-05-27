@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :listings
   has_many :reviews
   validates :email, presence: true, uniqueness: true
-  validates :gender, presence: true#, inclusion: { in: ["Male", "Female", "Diverse", "Prefer not to disclose"] }
+  validates :gender, inclusion: { in: ["Male", "Female", "Diverse", "Prefer not to disclose"] }
 end

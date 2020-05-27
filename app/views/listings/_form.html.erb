@@ -1,16 +1,49 @@
-<%= simple_form_for(@listing) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :listing_type %>
-    <%= f.input :capacity %>
+<div class="outer-box-newlisting">
+  <div class="login-title">
+    <h2>Host your home</h2>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <%= simple_form_for(@listing) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name,
+                  required: true,
+                  autofocus:true,
+                  label:false,
+                  input_html: { class: "login-input", placeholder: "title" } %>
+      <%= f.input :address,
+                  required: true,
+                  autofocus:true,
+                  label:false,
+                  input_html: { class: "login-input", placeholder: "address" }%>
+      <%= f.input :price,
+                  required: true,
+                  autofocus:true,
+                  label:false,
+                  input_html: { class: "login-input", placeholder: "price per night" }%>
+      <%= f.input :listing_type,
+                  required: true,
+                  autofocus:true,
+                  label:false,
+                  input_html: { class: "login-input", placeholder: "type of accommodation" } %>
+      <%= f.input :capacity,
+                  required: true,
+                  autofocus:true,
+                  label:false,
+                  input_html: { class: "login-input", placeholder: "capacity" }%>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, { class: "submit-login-button" } %>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-between">
+    <%= link_to 'Back', root_path, { class: "cancel-link" } %>
   </div>
-<% end %>
+
+  <br>
+  <br>
+</div>
