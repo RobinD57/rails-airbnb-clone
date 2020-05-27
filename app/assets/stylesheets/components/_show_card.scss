@@ -41,3 +41,13 @@
 .center {
   margin: 0 auto;
 }
+
+.review_actions a {
+  color: black;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.review_actions a:hover {
+  opacity: 1;
+}
