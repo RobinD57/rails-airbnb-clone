@@ -1,12 +1,19 @@
 <div class="d-flex justify-content-around pt-4">
   <div class="text-right ml-3 mt-5 w-100 d-flex justify-content-between">
     <%= render "/shared/carosel" %>
-    <h4 class="text-right pr-5"><%= @listing.name %></h4>
+    <div class="w-50">
+      <h4 class="pr-5 red"><%= @listing.name %></h4>
+  <div class="specs"> <p>a</p> </div>
+  <div class="specs"> <p>a</p> </div>
+  <div class="specs"> <p>a</p> </div>
+  </div>
   </div>
 </div>
 <div class="mr-5 w-50">
   <ul class="list-group">
-    <h4 class="text-right">Specs:</h4>
+    <br>
+    <br>
+    <h4 class="text-right">Reviews</h4>
     <% @listing.reviews.each do |review| %>
     <li class= "list-group-item">
       <%=review.content %>
