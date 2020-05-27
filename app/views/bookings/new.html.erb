@@ -1,0 +1,5 @@
+<%= simple_form_for [ @listing, @booking ] do |f| %>
+  <%= f.text_field :check_in, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
+  <%= f.text_field :check_out, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy"  %>
+  <%= f.submit "Confirm booking", class: "btn btn-primary" %>
+<% end %>
