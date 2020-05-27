@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_listing, only: [:new, :create]
+  before_action :set_listing, only: [:new, :create, :index]
   before_action :set_review, only: [:destroy, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index]
 
