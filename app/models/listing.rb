@@ -7,4 +7,6 @@ class Listing < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :listing_type, presence: true
   validates :capacity, presence: true, numericality: { only_integer: true }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
