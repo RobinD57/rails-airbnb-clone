@@ -9,7 +9,8 @@ class ListingsController < ApplicationController
     @markers = @listings.map do |listing|
       {
         lat: listing.latitude,
-        lng: listing.longitude
+        lng: listing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { listing: listing })
       }
     end
   end
