@@ -4,37 +4,6 @@ class BookingsController < ApplicationController
 
 # CHANGE BOOKING STATUS
 # MIGRATION FOR TOTAL PRICE
-<<<<<<< HEAD
-  def new
-    @booking = Booking.new
-    authorize @review
-  end
-
-  def create
-    @listing = Listing.find(params[:listing_id])
-    @booking = Booking.new(booking_params)
-    @booking.listing = @listing
-    @booking.user = current_user
-    @booking.status = "Pending host confirmation"
-    authorize @listing
-
-    if @booking.check_out && @booking.check_in
-      @booking.TOTAL_PRICE = (@booking.check_out - @booking.check_in).to_f * @booking.listing.price.to_f
-    else
-      @booking.TOTAL_PRICE = 0
-    end
-
-    @booking.save ? redirect_to booking_path(@booking) : redirect_to listing_path(@listing)
-  end
-
-  def index
-    @bookings = Booking.where(user_id: current_user.id)
-  end
-
-  def show
-    @listing = @booking.listing
-=======
-
   def index
     @bookings = policy_scope(Booking.where(user_id: current_user.id))
   end
@@ -67,32 +36,24 @@ class BookingsController < ApplicationController
     else
       render :new
     end
->>>>>>> 0693be6b392f89e542d06cfdbbaa3a05cba94378
   end
 
   def edit; end
 
   def update
     @booking.status = "Pending host confirmation"
-<<<<<<< HEAD
-    @booking.save!
-=======
     if @booking.update(booking_params)
       redirect_to booking_path(@booking), notice: 'Listing was successfully updated.'
     else
       render :edit
     end
     # @booking.save!
->>>>>>> 0693be6b392f89e542d06cfdbbaa3a05cba94378
     redirect_to booking_path(@booking)
   end
 
   def destroy
     @booking.destroy
-<<<<<<< HEAD
-=======
     authorize @booking
->>>>>>> 0693be6b392f89e542d06cfdbbaa3a05cba94378
     redirect_to root_path
   end
 
