@@ -3,7 +3,15 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @listings = policy_scope(Listing) # .order(created_at: :desc)
+    @listings = policy_scope(Listing.geocoded) # .order(created_at: :desc)
+
+
+    @markers = @listings.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude
+      }
+    end
   end
 
   def show
