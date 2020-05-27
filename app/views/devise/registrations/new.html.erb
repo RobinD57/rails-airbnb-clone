@@ -21,6 +21,9 @@
                   label: false,
                   input_html: { class: "login-input", placeholder: "last name", autocomplete: "last_name" }%>
       <%= f.input :birthdate,
+                  as: :date,
+                  end_year: Date.today.year - 90,
+                  start_year: Date.today.year - 18,
                   required: true,
                   autofocus: true,
                   label: false,
@@ -28,6 +31,9 @@
       <%= f.input :gender,
                   required: true,
                   autofocus: true,
+                  as: :select,
+                  collection: ["Male", "Female", "Diverse", "Prefer not to disclose"],
+                  prompt: 'Select gender',
                   label: false,
                   input_html: { class: "login-input", placeholder: "gender", autocomplete: "gender" }%>
       <%= f.input :email,
