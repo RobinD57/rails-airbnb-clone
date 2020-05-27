@@ -1,5 +1,5 @@
 <% @bookings.each do |booking| %>
-  <%= booking.check_in %>
-  <%= booking.check_out %>
-  <%= booking.status %>
+<h3><%= booking.status %></h3>
+<h5><strong>Start date: </strong><%= booking.check_in %></h5>
+<h5><strong>End date: </strong><%= booking.check_out %></h5>
 <% end %>
