@@ -18,6 +18,14 @@ a:hover, a:visited, a:link, a:active
   text-decoration: none;
 }
 
+.button-to-listing {
+  border-radius: 5px;
+  background-color: #AF2F60;
+  width: 100%;
+  color: white;
+  font-family: Roboto;
+}
+
 .card-overflow {
   white-space: nowrap;
   overflow: hidden;
