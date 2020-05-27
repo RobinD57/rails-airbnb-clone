@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     authorize @listing
     respond_to do |format|
       if @review.save
-        format.html { redirect_to reviews_path, notice: 'Review was successfully created.' }
+        format.html { redirect_to listing_path(@listing), notice: 'Review was successfully created.' }
         format.json { render :index, status: :created, location: @reviews }
       else
         format.html { render :new }
