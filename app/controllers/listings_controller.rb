@@ -29,7 +29,7 @@ class ListingsController < ApplicationController
     @listing.user = current_user
     authorize @listing
     respond_to do |format|
-      if @listing.save
+      if @listing.save!
         format.html { redirect_to @listing, notice: 'listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
@@ -62,6 +62,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:name, :address, :price, :listing_type, :capacity)
+    params.require(:listing).permit(:name, :address, :price, :listing_type, :capacity, :lat, :lng)
   end
 end
