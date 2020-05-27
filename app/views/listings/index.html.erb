@@ -1,6 +1,4 @@
-<% @listings.each do |listing| %>
-  <%= render "shared/cards" %>
-<% end %>
+<%= render "shared/cards" %>
 <div id="map"
   style="width: 100%; height: 600px;"
   data-markers="<%= @markers.to_json %>"
