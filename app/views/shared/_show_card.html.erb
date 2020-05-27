@@ -1,19 +1,52 @@
-<div class="d-flex justify-content-around pt-4">
-  <div class="text-right ml-3 mt-5 w-100 d-flex justify-content-between">
+<div class="d-flex justify-content-around p-4 mt-4 padded box-shadow">
+  <div class="text-right ml-3 mt-5 w-100 d-flex justify-content-between ">
     <%= render "/shared/carosel" %>
-    <div class="w-50">
-      <h4 class="pr-5 red"><%= @listing.name %></h4>
-  <div class="specs"> <p>a</p> </div>
-  <div class="specs"> <p>a</p> </div>
-  <div class="specs"> <p>a</p> </div>
+    <div class= "w-50">
+      <div class= "mt-4 bg-white text-center specs border-radius box-shadow p-3 ml-3">
+        <h4 class="red"><%= @listing.name %></h4>
+      </div>
+      <div class="all-specs mt-4 ml-3">
+        <div class="d-flex center specs">
+          <h5 class="ml-4 red">address:</h5>
+          <p><%=@listing.address %></p>
+        </div>
+        <div class="d-flex center specs">
+          <h5 class="ml-4 red">price: </h5>
+          <p><%=@listing.price %></p>
+        </div>
+        <div class="d-flex center specs">
+          <h5 class="ml-4 red">listing type: </h5>
+          <p><%=@listing.listing_type %></p>
+        </div>
+        <div class="d-flex center specs">
+          <h5 class="ml-4 red">capacity: </h5>
+          <p><%=@listing.capacity %></p>
+        </div>
+        <div class="text-center">
+          <%= link_to "request to book" ,root_path, :class => "btn btn-outline-secondary btn-md mb-2" %>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <%= link_to "back to listings", root_path, :class => "btn btn-light btn-md mb-2" %>
+        <i class="fas fa-circle small align-middle mb-1"></i>
+        <%= link_to "edit listing", edit_listing_path, :class => "btn btn-light btn-md mb-2" %>
+        <i class="fas fa-circle small align-middle mb-1"></i>
+        <%= link_to "delete listing",
+          @listing,
+          method: :delete,
+          data: { confirm: "Are you sure?" }, :class => "btn btn-light btn-md mb-2" %>
+    </div>
+    </div>
   </div>
   </div>
 </div>
 <div class="mr-5 w-50">
   <ul class="list-group">
+
     <br>
     <br>
     <h4 class="text-right">Reviews</h4>
+
     <% @listing.reviews.each do |review| %>
     <li class= "list-group-item">
       <%=review.content %>
