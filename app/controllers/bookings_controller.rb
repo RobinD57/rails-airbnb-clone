@@ -4,46 +4,57 @@ class BookingsController < ApplicationController
 
 # CHANGE BOOKING STATUS
 # MIGRATION FOR TOTAL PRICE
-  def new
-    @booking = Booking.new
-    authorize @review
-  end
-
-  def create
-    @listing = Listing.find(params[:listing_id])
-    @booking = Booking.new(booking_params)
-    @booking.listing = @listing
-    @booking.user = current_user
-    @booking.status = "Pending host confirmation"
-    authorize @listing
-
-    if @booking.check_out && @booking.check_in
-      @booking.TOTAL_PRICE = (@booking.check_out - @booking.check_in).to_f * @booking.listing.price.to_f
-    else
-      @booking.TOTAL_PRICE = 0
-    end
-
-    @booking.save ? redirect_to booking_path(@booking) : redirect_to listing_path(@listing)
-  end
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = policy_scope(Booking.where(user_id: current_user.id))
   end
 
   def show
     @listing = @booking.listing
+    authorize @listing
+  end
+
+  def new
+    @booking = Booking.new
+    authorize @booking
+  end
+
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.status = "Pending host confirmation"
+    @booking.listing = @listing
+    @booking.user = current_user
+    authorize @listing
+
+    if @booking.check_out && @booking.check_in
+      @booking.total_price = (@booking.check_out - @booking.check_in).to_f * @booking.listing.price.to_f
+    else
+      @booking.total_price = 0
+    end
+
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def edit; end
 
   def update
     @booking.status = "Pending host confirmation"
-    @booking.save!
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking), notice: 'Listing was successfully updated.'
+    else
+      render :edit
+    end
+    # @booking.save!
     redirect_to booking_path(@booking)
   end
 
   def destroy
     @booking.destroy
+    authorize @booking
     redirect_to root_path
   end
 
