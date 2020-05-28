@@ -1,0 +1,44 @@
+.container-fx {
+position: relative;
+width: 200px;
+height: 200px;
+display: inline-block;
+}
+
+.image-fx {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  transition: all .3s ease;
+  opacity: 0;
+  background-color: #5B3000;
+}
+
+.container-fx:hover .overlay {
+  opacity: 1;
+}
+
+.text-card {
+  color: white;
+  font-family: sans-serif;;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overlayFade {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #5B3001b3;
+}
