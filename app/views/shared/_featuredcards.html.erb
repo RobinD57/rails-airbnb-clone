@@ -1,0 +1,19 @@
+  <div class="cards-listings1">
+   <% @listings.each do |listing| %>
+    <div class="col-2">
+     <%= link_to listing_path(listing) do %>
+        <div align="center">
+          <div class="container-fx1">
+            <img src="https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>" class="image-fx1">
+            <div class="overlay1 overlayFade1">
+              <div class="text-card1">
+              <h5><%= listing.name %></h5>
+              <p><%= listing.address %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
