@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
 .outer-box-form {
-  background: #FFFFFF;
+  background: #F2DD9D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: auto;
@@ -11,7 +11,7 @@
 }
 
 .outer-box-signup {
-  background: #FFFFFF;
+  background: #F2DD9D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: auto;
@@ -21,7 +21,7 @@
 }
 
 .outer-box-password {
-  background: #FFFFFF;
+  background: #F2DD9D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: auto;
@@ -31,7 +31,7 @@
 }
 
 .outer-box-newlisting {
-  background: #FFFFFF;
+  background: #F2DD9D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: auto;
@@ -41,7 +41,7 @@
 }
 
 .outer-box-newreview {
-  background: #FFFFFF;
+  background: #F2DD9D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: auto;
@@ -50,13 +50,24 @@
   width: 500px;
 }
 
+.outer-box-newbooking {
+  background: #F2DD9D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: auto;
+  padding: 80px;
+  height: 330px;
+  width: 700px;
+}
+
+
 .login-title {
   text-align: center;
-  color: #AF2F60;
+  color: #5B3000;
 }
 
 .login-input {
-  background: #FFFFFF;
+  background: #FFF6DB;
   border: 1px solid #E4E4E4;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -65,38 +76,63 @@
 
 .submit-login-button {
   border-radius: 5px;
-  background-color: #AF2F60;
+  background-color: #E6AF2E;
   width: 100%;
-  color: white;
+  color: #5B3000;
   font-family: Roboto;
 }
 
 .submit-login-button:hover {
-  color: white;
+  background-color: #5B3000;
+  color: #E6AF2E;
 }
 
 .submit-review-button {
   border-radius: 5px;
   padding: 8px;
-  background-color: #AF2F60;
+  background-color: #E6AF2E;
   width: 100%;
-  color: white;
+  color: #5B3000;
   font-family: Roboto;
+}
+
+.submit-review-button:hover {
+  background-color: #5B3000;
+  color: #E6AF2E;
 }
 
 .cancel-link {
   padding-top: 5px;
-  color: #6d6d6d;
+  color: #5B3000;
   font-size: 15px;
 }
 
 .cancel-link:hover {
-  color: #dc1263;
+  color: #bc880d;
 }
 
 .pickdate {
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
+  color: #5B3000;
+  display: inline-flex;
+  justify-content: space-around;
 }
 
+#checkin {
+  align-items: center
+}
+
+#checkout {
+  align-items: center
+}
+
+.datepicker.checkin_on {
+  background: #FFF6DB;
+  border: 1px solid #E4E4E4;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+
+}

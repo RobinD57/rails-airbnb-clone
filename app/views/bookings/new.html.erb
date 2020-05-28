@@ -1,14 +1,18 @@
-<div class="outer-box-newreview">
+<div class="outer-box-newbooking">
   <div class="login-title">
     <h2>Request a new booking</h2>
   </div>
 
 <%= simple_form_for [ @listing, @booking ] do |f| %>
   <div class="pickdate">
-    <p><%= "Check-in:" %></p>
-    <%= f.text_field :check_in, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
-    <p><%= "Check-out:" %></p>
-    <%= f.text_field :check_out, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy"  %>
+    <div id="checkin">
+      <p><%= "Check-in:" %></p>
+      <%= f.text_field :check_in, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
+    </div>
+    <div id="checkout">
+      <p><%= "Check-out:" %></p>
+      <%= f.text_field :check_out, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy"  %>
+    </div>
   </div>
   <%= f.submit "Confirm booking", class: "submit-review-button" %>
 <% end %>
