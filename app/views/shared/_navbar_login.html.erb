@@ -1,11 +1,13 @@
 <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <div class="" href="#">
       <div class="d-flex align-middle btn btn-light small-button ">
-        <p id="nametag" class= "mb-0 ">Name</p>
+        <p id="nametag" class= "mb-0">Name</p>
         <div class= "d-flex">
-          <div>
-            <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-          </div>
+          <% if user_signed_in? %>
+            <img class="avatar-bordered" alt="avatar-bordered" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag current_user.profile_picture.key, height: 300, width: 400, crop: :fill %>')">
+          <% else %>
+            <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer">
+          <% end %>
           <div class="circle bg-danger" >
             <p class= "notification-count">1</p>
           </div>

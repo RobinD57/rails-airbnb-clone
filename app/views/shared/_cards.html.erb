@@ -3,7 +3,7 @@
   <div class="col-4">
     <%= link_to listing_path(listing) do %>
         <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url('https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>')">
+          <div class="flat-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photos[0].key, height: 300, width: 400, crop: :fill %>')">
           </div>
             <div class="flat-card-content">
               <div class="flat-card-title">
