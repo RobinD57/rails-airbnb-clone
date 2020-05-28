@@ -39,4 +39,10 @@ const initMapbox = () => {
   }
 };
 
+if (document.querySelector("#map .mapboxgl-popup-content")) {
+  document.querySelector("#map .mapboxgl-popup-content").addEventListener("click", () => {
+    alert("I WORK! <3");
+  });
+}
+
 export { initMapbox };
