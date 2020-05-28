@@ -1,0 +1,25 @@
+<div class="main-content">
+  <div class="cards-listings">
+   <% @listings.each do |listing| %>
+    <div class="col-2">
+     <%= link_to listing_path(listing) do %>
+        <div align="center">
+          <div class="container-fx">
+            <img src="https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>" class="image-fx">
+            <div class="overlay overlayFade">
+              <div class="text-card">
+              <h4><%= listing.name %></h4>
+              <p><%= listing.address %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
