@@ -41,9 +41,12 @@ class ListingsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @listing
+  end
 
   def update
+    authorize @listing
     if @listing.update(listing_params)
       redirect_to @listing, notice: 'Listing was successfully updated.'
     else
