@@ -4,17 +4,19 @@
     <br>
     <div class="w-100 center">
      <div class="d-flex justify-content-center align-middle">
-        <div class="d-flex">
+        <div class="text-center">
           <h4 class="text-center mb-0 mt-1">Reviews</h4>
+          <%= render "/shared/modal_review" %>
         </div>
       </div>
+      <br>
       <br>
       <% @listing.reviews.each do |review| %>
       <li class= "list-group-item pt-4 bg-light">
         <div class="list-group">
           <a href="#" class=" list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1"><%=  review.user.first_name %></h5>
+              <h5 class="mb-1"><%=  review.user.first_name.capitalize %> <%=  review.user.last_name.capitalize %> </h5>
               <small>3 days ago</small>
             </div>
             <p class="mb-1"><%=  review.content %></p>

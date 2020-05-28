@@ -28,9 +28,12 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @review
+  end
 
   def update
+    authorize @review
     if @review.update(review_params)
       redirect_to @review, notice: 'Review was successfully updated.'
     else
@@ -39,6 +42,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    authorize @review
     @review.destroy
     redirect_to listings_url, notice: 'Listing was successfully destroyed.'
   end

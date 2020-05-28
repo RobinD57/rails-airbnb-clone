@@ -1,0 +1,16 @@
+<div class="outer-box-newreview">
+  <div class="login-title">
+    <h2>Post a review</h2>
+  </div>
+  <%= simple_form_for [ @listing, @review ] do |f| %>
+    <%= f.input :content,
+                autofocus: true,
+                label: false,
+                input_html: { class: "login-input", placeholder: "write your review" } %>
+    <%= f.input :rating,
+                autofocus: true,
+                label: false,
+                input_html: { class: "login-input", placeholder: "rating" } %>
+    <%= f.submit "Submit review", { class: "submit-review-button" } %>
+  <% end %>
+</div>
