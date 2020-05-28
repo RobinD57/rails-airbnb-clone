@@ -1,20 +1,42 @@
-.banner {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+
+.mainbanner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
 }
 
-.banner h1 {
+.mainbanner h1 {
   margin: 0;
-  color: white;
+  color: #FFF6DB;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  font-family: Open Sans, sans-serif;
+  font-weight: 100px;
 }
 
-.banner p {
+.mainbanner p {
   font-size: 20px;
-  color: white;
+  color: #FFF6DB;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Open Sans, sans-serif;
+  font-weight: 100px;
+}
+
+.btn-flat {
+  color: #5B3000;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #E6AF2E;
+  transition: background 0.3s ease;
+  font-family: Open Sans, sans-serif;
+  font-weight: bold;
+}
+
+.btn-flat:hover {
+  background: #5B3000;
+  color: #E6AF2E;
 }
