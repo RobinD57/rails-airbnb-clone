@@ -14,16 +14,11 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner_or_admin?
+    true
   end
 
   def destroy?
-    user_is_owner_or_admin?
+    true
   end
 
-  private
-
-  def user_is_owner_or_admin?
-    user == record.user || user.admin
-  end
 end
