@@ -1,2 +1,6 @@
-<h2><%= listing.name %></h2>
-<p><%= listing.address %></p>
+<%= link_to listing_path(listing) do %>
+  <div>
+    <h2><%= listing.name%></h2>
+    <p><%= listing.address%></p>
+  </div>
+<% end %>
