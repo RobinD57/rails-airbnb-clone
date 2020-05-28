@@ -1,0 +1,25 @@
+  <%= link_to "request to book", listing_bookings_path(@listing),{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', :class => "btn btn-outline-secondary btn-md mb-2"} %>
+  <div id="modal-window" class="modal hide fade w-100" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content w-100">
+        <div class="outer-box-newreview">
+          <div class="login-title">
+            <h2>Request a new booking</h2>
+          </div>
+
+          <%= simple_form_for [ @listing, @booking ] do |f| %>
+          <div class="pickdate">
+            <p><%= "Check-in:" %></p>
+            <%= f.text_field :check_in, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy" %>
+            <p><%= "Check-out:" %></p>
+            <%= f.text_field :check_out, class: "datepicker checkin_on", value: @checkin, placeholder: "dd/mm/yyyy"  %>
+          </div>
+          <%= f.submit "Confirm booking", class: "submit-review-button" %>
+          <% end %>
+
+        </div>
+        <div class="container m-3">
+        </div>
+      </div>
+    </div>
+  </div>
