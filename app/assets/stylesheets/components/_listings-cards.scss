@@ -5,6 +5,15 @@ height: 200px;
 display: inline-block;
 }
 
+.cards-listings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  padding: 5px;
+  flex-grow: 1;
+  padding-left: 80px;
+}
+
 .image-fx {
   display: block;
   width: 200px;
@@ -41,4 +50,22 @@ display: inline-block;
   top: 0;
   left: 0;
   background-color: #5B3001b3;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  padding-right: 80px;
+}
+
+@media (max-width: 768px) {
+  .cards-listings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-listings {
+    grid-template-columns: 1fr;
+  }
 }
