@@ -7,7 +7,6 @@
         <div class="d-flex">
           <h4 class="text-center mb-0 mt-1">Reviews</h4>
         </div>
-        <%= link_to "<i class='fas fa-plus-square'></i>".html_safe, new_listing_review_path(@listing), { class: 'btn btn-secondary btn-sm  ml-3 pt-2 px-3 mb-0'} %>
       </div>
       <br>
       <% @listing.reviews.each do |review| %>
