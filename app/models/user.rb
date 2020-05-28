@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :reviews
   validates :email, presence: true, uniqueness: true
   validates :gender, inclusion: { in: ["Male", "Female", "Diverse", "Prefer not to disclose"] }
+  has_one_attached :profile_picture
 end

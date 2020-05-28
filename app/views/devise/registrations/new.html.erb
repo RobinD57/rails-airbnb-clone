@@ -32,6 +32,11 @@
                   prompt: 'Select gender',
                   label: false,
                   input_html: { class: "login-input", placeholder: "gender", autocomplete: "gender" }%>
+      <%= f.input :profile_picture,
+                  as: :file,
+                  required: true,
+                  label: false,
+                  input_html: { class: "login-input", placeholder: "confirm password", autocomplete: "new-password" } %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
