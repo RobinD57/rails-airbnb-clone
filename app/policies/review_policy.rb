@@ -24,11 +24,7 @@ class ReviewPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    if user_signed_in?
-      user == record.user || user.admin
-    else
-      false
-    end
+    user && (record.user || user.admin)
   end
 
 end
