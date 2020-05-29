@@ -4,13 +4,17 @@
   <div class="last-request">
     <h4>Recent requests</h4>
     <% @bookings.each do |booking| %>
-    <h5><%= booking.status %></h5>
-    <div class="booking-dates">
-      <p><%= Listing.find(booking.listing_id).name %></p>
-      <p><strong>Start date: </strong><%= booking.check_in %></p>
-      <p><strong>End date: </strong><%= booking.check_out %></p>
-      <p><strong>Total Price: </strong><%= booking.total_price %></p>
-    </div>
+    <h5>Current status: <%= booking.status %></h5>
+      <div class="pending">
+        <div id="listing-title">
+          <h5><strong><%= Listing.find(booking.listing_id).name %></strong></h5>
+        </div>
+        <div class="booking-dates">
+          <p><strong>Start date: </strong><%= booking.check_in %></p>
+          <p><strong>End date: </strong><%= booking.check_out %></p>
+          <p><strong>Total Price: </strong><%= booking.total_price %></p>
+        </div>
+      </div>
     <% end %>
   </div>
   <div class="past-bookings">
