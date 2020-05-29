@@ -2,6 +2,10 @@
   margin-top: 100px;
 }
 
+.soft-yellow {
+  background-color: #fffef2;
+}
+
 .rounded-lg {
   border-radius: 40px;
 }
@@ -20,10 +24,18 @@
 }
 
 .all-specs {
-  background: white;
   border-radius: 20px;
-  padding: 50px 3px 50px;
+  padding: 40px 3px 50px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
+}
+
+.listing-title {
+  padding: 0px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.shadowed {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .padded {
@@ -31,7 +43,7 @@
 }
 
 .border-radius {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
 
 .box-shadow {
@@ -41,13 +53,17 @@
 .center {
   margin: 0 auto;
 }
+.green {
+  color: #0a2301;
+}
 
 .review_actions a {
   color: #E6AF2E;
-  opacity: 0.6;
+  opacity: 0.8;
   text-decoration: none;
 }
 
 .review_actions a:hover {
   opacity: 1;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
 }

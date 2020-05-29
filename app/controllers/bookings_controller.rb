@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
   def update
     @booking.status = "Pending host confirmation"
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: 'Listing was successfully updated.'
+      redirect_to booking_path(@booking)
     else
       render :edit
     end
