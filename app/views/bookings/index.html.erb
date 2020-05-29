@@ -6,6 +6,7 @@
     <% @bookings.each do |booking| %>
     <h5><%= booking.status %></h5>
     <div class="booking-dates">
+      <p><%= Listing.find(booking.listing_id).name %></p>
       <p><strong>Start date: </strong><%= booking.check_in %></p>
       <p><strong>End date: </strong><%= booking.check_out %></p>
       <p><strong>Total Price: </strong><%= booking.total_price %></p>
