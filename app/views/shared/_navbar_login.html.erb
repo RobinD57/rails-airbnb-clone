@@ -1,7 +1,11 @@
 <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <div class="" href="#">
       <div class="d-flex align-middle btn btn-gold small-button ">
-        <p id="nametag" class= "mb-0"><%= current_user.first_name.capitalize %></p>
+        <% if user_signed_in? %>
+          <p id="nametag" class= "mb-0"><%= current_user.first_name.capitalize %></p>
+        <% else %>
+          <p id="nametag" class= "mb-0"><%= User %></p>
+        <% end %>
         <div class= "d-flex">
           <% if user_signed_in? %>
             <%= cl_image_tag current_user.profile_picture.key, class: "avatar-bordered" %>
