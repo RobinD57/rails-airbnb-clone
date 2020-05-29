@@ -19,6 +19,13 @@ class ListingsController < ApplicationController
     @booking = Booking.new
     @review = Review.new
     authorize @listing
+    @markers = [@listing].map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { listing: listing })
+      }
+    end
   end
 
   def new
