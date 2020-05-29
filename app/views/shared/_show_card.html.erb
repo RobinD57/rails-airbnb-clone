@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="text-center mt-3">
-        <%= link_to "back to listings", root_path, :class => "btn btn-light btn-md mb-2" %>
+        <%= link_to "back to listings", listings_path, :class => "btn btn-light btn-md mb-2" %>
         <% if user_signed_in? %>
           <% if policy(@listing).edit? %>
             <i class="fas fa-circle small align-middle mb-1"></i>
