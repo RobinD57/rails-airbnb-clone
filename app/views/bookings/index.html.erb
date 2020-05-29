@@ -1,5 +1,20 @@
-<% @bookings.each do |booking| %>
-<h3><%= booking.status %></h3>
-<h5><strong>Start date: </strong><%= booking.check_in %></h5>
-<h5><strong>End date: </strong><%= booking.check_out %></h5>
-<% end %>
+<h3>My bookings</h3>
+
+<div class="dash-wrapper">
+  <div class="last-request">
+    <h4>Recent requests</h4>
+    <% @bookings.each do |booking| %>
+    <h5><%= booking.status %></h5>
+    <div class="booking-dates">
+      <p><strong>Start date: </strong><%= booking.check_in %></p>
+      <p><strong>End date: </strong><%= booking.check_out %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="past-bookings">
+    <h4>Past bookings</h4>
+    <div class="fake-cards">
+      <img src="https://res.cloudinary.com/dwtuoc2xm/image/upload/v1590750751/fake-cards2_gxgt0q.png">
+    </div>
+  </div>
+</div>
