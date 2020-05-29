@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     authorize @listing
     respond_to do |format|
       if @listing.save!
-        format.html { redirect_to @listing, notice: 'listing was successfully created.' }
+        format.html { redirect_to @listing }
         format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class ListingsController < ApplicationController
   def update
     authorize @listing
     if @listing.update(listing_params)
-      redirect_to @listing, notice: 'Listing was successfully updated.'
+      redirect_to @listing
     else
       render :edit
     end
@@ -57,7 +57,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     authorize @listing
-    redirect_to listings_path, notice: 'Listing was successfully destroyed.'
+    redirect_to listings_path
   end
 
   private

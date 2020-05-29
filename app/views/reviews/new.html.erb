@@ -2,7 +2,7 @@
   <div class="login-title">
     <h2>Post a review</h2>
   </div>
-  <%= simple_form_for [ @listing, @review ] do |f| %>
+  <%= simple_form_for ([ @listing, @review ], remote: true) do |f| %>
     <%= f.input :content,
                 autofocus: true,
                 label: false,

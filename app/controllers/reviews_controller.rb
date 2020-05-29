@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     authorize @listing
     respond_to do |format|
       if @review.save
-        format.html { redirect_to listing_path(@listing), notice: 'Review was successfully created.' }
+        format.html { redirect_to listing_path(@listing, anchor: "review-#{@review.id}") }
         format.json { render :index, status: :created, location: @reviews }
       else
         format.html { render :new }
@@ -35,7 +35,7 @@ class ReviewsController < ApplicationController
   def update
     authorize @review
     if @review.update(review_params)
-      redirect_to listing_path(@review.listing_id), notice: 'Review was successfully updated.'
+      redirect_to listing_path(@review.listing_id)
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
   def destroy
     authorize @review
     @review.destroy
-    redirect_to listing_path(@review.listing_id), notice: 'Listing was successfully destroyed.'
+    redirect_to listing_path(@review.listing_id, anchor: "reviews")
   end
 
   private
