@@ -1,16 +1,18 @@
 <div class="navbar navbar-main navbar-light fixed-top border-bottom">
   <div>
-    <p id="banner-typed-text" class="mb-0">
-      <%= link_to "<i id='logo' class='fab fa-airbnb'></i>".html_safe, root_path %>
-    </p>
+    <%= link_to  root_path do  %>
+      <div class= "logo" style="background-image: url(https://res.cloudinary.com/duueqba0z/image/upload/v1590745526/brown-bearbnb1_hbonli.png)">
+      </div>
+    <% end %>
   </div>
   <div class="d-flex">
-    <div id="right-links" class="align-middle"><a href="" class="m-1">
-      <i class="fas fa-globe"></i>
-      <i class="fas fa-chevron-down"></i>
-    </a>
-    <a class="btn  btn-sm rounded medium" href="/listings/new">Host your home</a>
-    <a class="btn btn-gold btn-sm rounded medium"href="#">Help</a>
+    <div id="right-links" class="align-middle">
+      <a href="" class="m-1">
+        <i class="fas fa-globe"></i>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+      <a class="btn btn-gold btn-sm rounded medium" href="/listings/new">Host your home</a>
+      <a class="btn btn-gold btn-sm rounded medium"href="#">Help</a>
     </div>
     <div>
       <%= render "/shared/navbar_login" %>
