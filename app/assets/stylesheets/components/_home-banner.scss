@@ -37,6 +37,15 @@
 }
 
 .btn-flat:hover {
+  color: #E6AF2E;
+  padding: 8px 24px;
+  border-radius: 4px;
   background: #5B3000;
+  transition: background 0.3s ease;
+  font-family: Open Sans, sans-serif;
+  font-weight: bold;
+}
+
+.btn-flat:hover a{
   color: #E6AF2E;
 }
