@@ -24,7 +24,7 @@ class ReviewPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
-    user && (record.user || user.admin)
+    user == record.user || user.admin
   end
 
 end
