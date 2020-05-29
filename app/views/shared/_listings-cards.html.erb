@@ -5,7 +5,7 @@
      <%= link_to listing_path(listing) do %>
         <div align="center">
           <div class="container-fx">
-            <img src="https://picsum.photos/300/200?image=<%= (rand() * 20).to_i %>" class="image-fx">
+            <%= cl_image_tag listing.photos[0].key, class: "image-fx" %>
             <div class="overlay overlayFade">
               <div class="text-card">
               <h5><%= listing.name %></h5>
