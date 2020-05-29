@@ -12,7 +12,7 @@
       <br>
       <br>
       <% @listing.reviews.each do |review| %>
-      <li class= "list-group-item pt-4 m-3 border-radius soft-yellow box-shadow">
+      <li class= "list-group-item pt-3 m-3 border-radius soft-yellow box-shadow">
         <div class="list-group">
           <a href="#" class=" list-group-item m-2 border-radius box-shadow list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
@@ -33,14 +33,14 @@
                                 data: { confirm: "Are you sure?" } %>
               </div>
             <% else %>
-              <div class="p-1 mt-1" style= "height:36px";>
+              <div class="p-1 mt-1" style= "height:50px";>
             <% end %>
             <% if policy(review).edit? %>
               <div class="p-1 mt-1"> <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe,
               edit_review_path(review) %>
               </div>
              <% else %>
-              <div class="p-1 mt-1" style= "height:36px";>
+              <div class="p-1 mt-1" style= "height:50px";>
             <% end %>
           <% end %>
         </div>
