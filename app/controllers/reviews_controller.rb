@@ -35,7 +35,7 @@ class ReviewsController < ApplicationController
   def update
     authorize @review
     if @review.update(review_params)
-      redirect_to @review, notice: 'Review was successfully updated.'
+      redirect_to listing_path(@review.listing_id), notice: 'Review was successfully updated.'
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
   def destroy
     authorize @review
     @review.destroy
-    redirect_to listings_url, notice: 'Listing was successfully destroyed.'
+    redirect_to listing_path(@review.listing_id), notice: 'Listing was successfully destroyed.'
   end
 
   private

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:index, :show, :destroy, :update]
-  resources :reviews, only: [:destroy, :edit]
+  resources :reviews, only: [:destroy, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
