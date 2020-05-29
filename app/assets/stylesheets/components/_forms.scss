@@ -135,3 +135,13 @@
   border-radius: 8px;
 
 }
+
+#new_listing > div.form-inputs > div.form-group.file.required.listing_photos > label {
+  color: #5b3000;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: 600;
+}
+#new_listing > div.form-inputs > div.form-group.file.required.listing_photos > label > abbr {
+  display: none;
+}
+
