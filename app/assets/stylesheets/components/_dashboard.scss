@@ -3,7 +3,7 @@
 }
 
 .booking-dates {
-  padding-left: 100px;
+  padding-left: 50px;
 }
 
 .fake-cards {
@@ -11,7 +11,7 @@
 }
 
 .last-request h5 {
-padding-top: 50px;
+padding-top: 20px;
 padding-left: 100px;
 padding-bottom: 0px;
 font-family: Open Sans, sans-serif;
@@ -20,7 +20,24 @@ font-size: 20px;
 color: #5B3000;
 }
 
+.last-request {
+  padding-left: 1px;
+}
+
 
 .past-bookings h4 {
 padding-left: 300px;
+}
+
+#listing-title h5 {
+  padding-left: 50px;
+}
+
+.pending {
+  background-color: #F2DD9D;
+  width: 400px;
+  height: 150px;
+  margin-left: 100px;
+  border-radius: 20px;
+  text-align: left;
 }
