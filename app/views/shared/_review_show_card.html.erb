@@ -24,18 +24,20 @@
           </a>
         </div>
         <div class="d-flex review_actions">
-          <% if policy(review).destroy? %>
-            <div class="p-1 mt-1"> <%= link_to "<i class='fas fa-trash'></i>".html_safe,
-                              review_path(review),
-                              method: :delete,
-                              remote: true,
-                              data: { confirm: "Are you sure?" } %>
-            </div>
-          <% end %>
-          <% if policy(review).edit? %>
-            <div class="p-1 mt-1"> <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe,
-            edit_review_path(review) %>
-            </div>
+          <% if user_signed_in? %>
+            <% if policy(review).destroy? %>
+              <div class="p-1 mt-1"> <%= link_to "<i class='fas fa-trash'></i>".html_safe,
+                                review_path(review),
+                                method: :delete,
+                                remote: true,
+                                data: { confirm: "Are you sure?" } %>
+              </div>
+            <% end %>
+            <% if policy(review).edit? %>
+              <div class="p-1 mt-1"> <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe,
+              edit_review_path(review) %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </li>
