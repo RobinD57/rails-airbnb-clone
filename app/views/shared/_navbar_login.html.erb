@@ -4,13 +4,13 @@
         <% if user_signed_in? %>
           <p id="nametag" class= "mb-0"><%= current_user.first_name.capitalize %></p>
         <% else %>
-          <p id="nametag" class= "mb-0"><%= User %></p>
+          <p id="nametag" class= "mb-0">Log in!</p>
         <% end %>
         <div class= "d-flex">
           <% if user_signed_in? %>
             <%= cl_image_tag current_user.profile_picture.key, class: "avatar-bordered" %>
           <% else %>
-            <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer">
+            <img class="avatar-bordered" alt="avatar-bordered" src="https://i.pinimg.com/736x/36/16/1e/36161e373bb92df4a1aea6d58c35c31a.jpg">
           <% end %>
           <div class="circle bg-danger" >
             <p class= "notification-count">1</p>
