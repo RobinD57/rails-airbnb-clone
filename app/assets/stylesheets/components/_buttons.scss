@@ -1,7 +1,16 @@
 .btn-gold {
   background: #E6AF2E;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .btn-gold:hover {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
+}
+
+.btn-pale{
+  color: #5B3000;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.btn-pale:hover {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) !important;
 }
