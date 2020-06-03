@@ -48,3 +48,4 @@ yarn-debug.log*
 .rakeTasks
 .generators
 .env*
+.env*
