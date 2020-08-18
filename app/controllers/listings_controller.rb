@@ -77,4 +77,3 @@ class ListingsController < ApplicationController
     params.require(:listing).permit(:name, :address, :price, :listing_type, :capacity, :latitude, :longitude, photos: [])
   end
 end
-end
